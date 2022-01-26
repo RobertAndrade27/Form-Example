@@ -5,7 +5,7 @@ import InputText from './Components/InputText.js';
 import { Formik } from 'formik';
 import Axios from 'axios';
 
-export default function FormDados() {
+export default function FormikForm() {
   function onSubmitDados() {
     console.log('Submit daados');
   }
