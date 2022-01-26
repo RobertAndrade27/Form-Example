@@ -4,6 +4,7 @@ import Divider from '@mui/material/Divider';
 import InputText from './Components/InputText.js';
 import { Formik } from 'formik';
 import Axios from 'axios';
+import NumberFormat from 'react-number-format';
 
 export default function FormikForm() {
   function onSubmitDados() {
@@ -62,13 +63,14 @@ export default function FormikForm() {
                 />
               </Grid>
               <Grid item md={3}>
-                <InputText
+                <NumberFormat
                   fullWidth
                   label="CPF"
                   name="cpf"
                   onChange={handleChange}
-                  type="text"
+                  customInput={InputText}
                   value={values.cpf}
+                  format="###.###.###-##"
                 />
               </Grid>
               <Grid item md={3}>
@@ -92,23 +94,25 @@ export default function FormikForm() {
                 />
               </Grid>
               <Grid item md={3}>
-                <InputText
+                <NumberFormat
                   fullWidth
                   label="Telefone"
                   name="telefone"
-                  onChange={handleChange}
-                  type="text"
+                  customInput={InputText}
                   value={values.telefone}
+                  format="(##) ####-####"
+                  onChange={handleChange}
                 />
               </Grid>
               <Grid item md={3}>
-                <InputText
+                <NumberFormat
                   fullWidth
                   label="Celular"
                   name="celular"
                   onChange={handleChange}
-                  type="text"
+                  customInput={InputText}
                   value={values.celular}
+                  format="(##) # ####-####"
                 />
               </Grid>
               <Grid item md={3}>
